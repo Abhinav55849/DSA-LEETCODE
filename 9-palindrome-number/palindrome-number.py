@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: bool
         """
         x = str(x)
-        reversed_x = (str(x)[::-1])
+        reversed_x = str(x)[::-1]
         if x == reversed_x:
             return True
         else:
