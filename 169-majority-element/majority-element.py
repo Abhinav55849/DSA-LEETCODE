@@ -1,17 +1,13 @@
 class Solution(object):
     def majorityElement(self, nums):
-        candidate = None
-        count = 0
-        
-        for num in nums:
-            
-            if count == 0:
-                candidate = num
-            
-            if num == candidate:
-                count += 1
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        freq = {}
+        for char in nums:
+            if char in freq:
+                freq[char] +=1
             else:
-                count -= 1
-                
-        return candidate
-        
+                freq[char] = 1
+        return max(freq,key =freq.get)
