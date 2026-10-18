@@ -10,4 +10,10 @@ class Solution(object):
                 freq[char] +=1
             else:
                 freq[char] = 1
-        return max(freq,key =freq.get)
+        best = None
+        best_count = 0
+        for num in freq:
+            if freq[num] > best_count:
+                best_count = freq[num]
+                best = num
+        return best
