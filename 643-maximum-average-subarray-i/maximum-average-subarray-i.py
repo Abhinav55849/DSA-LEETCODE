@@ -1,5 +1,10 @@
-class Solution:
-    def findMaxAverage(self, nums: list[int], k: int) -> float:
+class Solution(object):
+    def findMaxAverage(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: float
+        """
         low = 0
         high = k-1
         total = 0
@@ -9,8 +14,7 @@ class Solution:
             total += nums[i]
 
         while high < n:
-            final = total/k
-            res = max(res,final)
+            res = max(res,total/float(k))
             low +=1
             high +=1
             if high == n:
